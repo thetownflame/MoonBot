@@ -1,3 +1,8 @@
+var port = process.env.PORT || 3000;
+app.listen(port, "0.0.0.0", function() {
+console.log("Listening on Port 3000");
+});
+
 const discord = require("discord.js")
 const { Client, Collection } = require("discord.js");
 const { readdirSync } = require("fs");
@@ -16,6 +21,13 @@ client.on('ready', () => {
       type: "STREAMING",
       url: "https://www.twitch.tv/thetownflame"
   })
+});
+
+
+var server_port = process.env.YOUR_PORT || process.env.PORT || 80;
+var server_host = process.env.YOUR_HOST || '0.0.0.0';
+server.listen(server_port, server_host, function() {
+    console.log('Listening on port %d', server_port);
 });
 
 
