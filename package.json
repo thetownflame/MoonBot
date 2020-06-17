@@ -1,0 +1,61 @@
+{
+  "name": "moon-bot",
+  "version": "1.1.0",
+  "description": "simple discord bot",
+  "main": "server.js",
+  "dependencies": {
+    "ascii-table": "^0.0.9",
+    "common-tags": "^1.8.0",
+    "cpu-stat": "^2.0.1",
+    "discord.js": "^12.2.0",
+    "ffmpeg": "^0.0.4",
+    "figlet": "^1.4.0",
+    "fs": "^0.0.2",
+    "genius-lyrics": "^2.0.1",
+    "got": "^11.3.0",
+    "jimp": "^0.13.0",
+    "mal-scraper": "^2.6.9",
+    "math-expression-evaluator": "^1.2.22",
+    "moment": "^2.26.0",
+    "moment-duration-format": "^2.3.2",
+    "nekos.life": "^2.0.7",
+    "node-osu": "^2.2.0",
+    "opusscript": "^0.0.7",
+    "path": "^0.12.7",
+    "random-puppy": "^1.1.0",
+    "request": "^2.88.2",
+    "simple-youtube-api": "^5.2.1",
+    "snekfetch": "^4.0.4",
+    "superagent": "^5.2.2",
+    "unique-random": "^2.1.0",
+    "urban.js": "^2.4.3",
+    "url": "^0.11.0",
+    "v": "^0.3.0",
+    "weather-js": "^2.0.0",
+    "ytdl-core": "^2.1.7",
+    "ytdl-core-discord": "^1.2.0"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "m.help",
+    "start": "node server.js"
+  },
+  "engines": {
+    "node": "14.x"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/thetownflame/Moon-Bot.git"
+  },
+  "keywords": [
+    "discord",
+    "node",
+    "javascript"
+  ],
+  "author": "ricochan",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/thetownflame/Moon-Bot/issues"
+  },
+  "homepage": "https://github.com/thetownflame/Moon-Bot#readme"
+}
