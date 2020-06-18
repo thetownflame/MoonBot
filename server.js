@@ -8,6 +8,16 @@ const client = new Client({
   disableEveryone: true
 })
 
+client.on('ready', () => {
+
+    process.setMaxListeners(0);
+      process.setMaxListeners(0);
+      client.user.setActivity(`m.help | ${client.guilds.cache.size} servers `, {
+      type: "STREAMING",
+      url: "https://www.twitch.tv/thetownflame"
+  })
+});
+
 
 client.on("warn", info => console.log(info));
 client.on("error", console.error)
