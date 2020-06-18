@@ -17,10 +17,10 @@ const utils = require('../../utils');
               superagent.get('https://nekos.life/api/v2/img/tickle')
                   .end((err, response) => {
                 const lewdembed = new Discord.MessageEmbed()
-                (message.author.username + " щекочет " + user.username)
+                .setTitle(message.author.username + " щекочет " + user.username)
                 .setImage(response.body.url)
                 .setColor(`RANDOM`)
-                ((message.author.toString() + " щекочет " + user.toString()))
+                .setDescription((message.author.toString() + " щекочет " + user.toString()))
                 .setFooter(`страшно...`)
                 .setURL(response.body.url);
             message.channel.send(lewdembed);

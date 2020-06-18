@@ -20,7 +20,7 @@ const utils = require('../../utils');
             .setTitle(message.author.username + " ударил " + user.username)
             .setImage(response.body.url)
             .setColor(`RANDOM`)
-            ((message.author.toString() + " со всей силы ударил " + user.toString()))
+            .setDescription((message.author.toString() + " со всей силы ударил " + user.toString()))
             .setFooter(`умер пацанчик...`)
             .setURL(response.body.url);
         message.channel.send(lewdembed);
