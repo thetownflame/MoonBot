@@ -29,7 +29,7 @@ client.queue = new Map();
 
 //// приветствие человека
 client.on('guildMemberAdd', member => {
-  const channel = member.guild.channels.cache.find(ch => ch.name === `┃✨прибывшие`);
+  const channel = member.guild.channels.cache.find(ch => ch.name === `‖🚕прибывшие`);
   if (!channel) return;
   var embed = new Discord.MessageEmbed()
 .setColor("FF9999")
