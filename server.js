@@ -31,11 +31,11 @@ client.queue = new Map();
 client.on('guildMemberAdd', member => {
   const channel = member.guild.channels.cache.find(ch => ch.name === `‖🚕прибывшие`);
   if (!channel) return;
+
   var embed = new Discord.MessageEmbed()
 .setColor("FF9999")
 .setDescription(`${member} присоединился к семейке сервера '**Городок Жизни**' `)
 .setImage("https://media.discordapp.net/attachments/698514137852018688/715867160534057041/-1.png?width=855&height=481")
-.setFooter('Puella - все права анимированы', 'https://fast-anime.ru/shop/upload/198594.jpg');
 
     channel.send(embed);
     var embed = new Discord.MessageEmbed()
