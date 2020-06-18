@@ -32,13 +32,13 @@ client.on('guildMemberAdd', member => {
   const channel = member.guild.channels.cache.find(ch => ch.name === `‖🚕прибывшие`);
   if (!channel) return;
 
-  var embed = new Discord.MessageEmbed()
+  var embed = new discord.MessageEmbed()
 .setColor("FF9999")
 .setDescription(`${member} присоединился к семейке сервера '**Городок Жизни**' `)
 .setImage("https://media.discordapp.net/attachments/698514137852018688/715867160534057041/-1.png?width=855&height=481")
 
     channel.send(embed);
-    var embed = new Discord.MessageEmbed()
+    var embed = new discord.MessageEmbed()
 
   .setColor("FF9999")
   .setDescription(`** Хей! Приветствую тебя на сервере "Городок жизни"! 🎇
