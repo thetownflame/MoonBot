@@ -1,8 +1,3 @@
-var port = process.env.PORT || 3000;
-app.listen(port, "0.0.0.0", function() {
-console.log("Listening on Port 3000");
-});
-
 const discord = require("discord.js")
 const { Client, Collection } = require("discord.js");
 const { readdirSync } = require("fs");
@@ -12,23 +7,6 @@ const { TOKEN, PREFIX } = require("./config.json")
 const client = new Client({
   disableEveryone: true
 })
-
-client.on('ready', () => {
-
-    process.setMaxListeners(0);
-      process.setMaxListeners(0);
-      client.user.setActivity(`m.help | ${client.guilds.cache.size} servers `, {
-      type: "STREAMING",
-      url: "https://www.twitch.tv/thetownflame"
-  })
-});
-
-
-var server_port = process.env.YOUR_PORT || process.env.PORT || 80;
-var server_host = process.env.YOUR_HOST || '0.0.0.0';
-server.listen(server_port, server_host, function() {
-    console.log('Listening on port %d', server_port);
-});
 
 
 client.on("warn", info => console.log(info));
