@@ -11,8 +11,8 @@ module.exports = {
     // The second ping is an average latency between the bot and the websocket server (one-way, not round-trip)
   
       const embed = new Discord.MessageEmbed()
-      .setAuthor('Moon Bot |  Приглашения', 'https://images-ext-2.discordapp.net/external/Z8jSSTkQ8AKxnK6m7qhOIX8nNR9U-FLVkXGv7cXaEEs/https/cdn.discordapp.com/avatars/719664504203640975/bdd04cfdb5bb773e3737f9488ff47ca3.webp', 'https://discord.com/oauth2/authorize?client_id=719664504203640975&scope=bot&permissions=2054351998')
-      .setColor("FFFAFA")
+      .setAuthor('Moonlight |  Приглашения', 'https://images-ext-2.discordapp.net/external/Z8jSSTkQ8AKxnK6m7qhOIX8nNR9U-FLVkXGv7cXaEEs/https/cdn.discordapp.com/avatars/719664504203640975/bdd04cfdb5bb773e3737f9488ff47ca3.webp', 'https://discord.com/oauth2/authorize?client_id=719664504203640975&scope=bot&permissions=2054351998')
+      .setColor("FBFF00")
       .addField("Сервер поддержки", '[Ткни меня ^-^](https://discord.gg/93wFswg)', false)
       .addField("Сcылка - приглашение", '[Ткни меня ^-^](https://discord.com/oauth2/authorize?client_id=719664504203640975&scope=bot&permissions=2054351998)', false)
       
