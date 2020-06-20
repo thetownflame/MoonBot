@@ -3,7 +3,7 @@
 
 
     module.exports = {
-        name: "userinfo",
+        name: "user",
         category: "utility",
     description: "Get information about a user",
     usage: "[command | user] or [command]",

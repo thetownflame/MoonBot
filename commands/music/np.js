@@ -5,8 +5,8 @@ module.exports = {
     
       const { channel } = message.member.voice;
     if (!channel) {
-      //IF AUTHOR IS NOT IN VOICE CHANNEL
-      return message.channel.send("Вы должны быть в войс канале :/");
+
+      return message.channel.send("Вы должны быть в голосовом канале");
     }
 
     const serverQueue = message.client.queue.get(message.guild.id);

@@ -8,19 +8,18 @@ module.exports = {
   name: "play",
   description: "PLAY THE SOFTNESS OF THE SOUND",
   async execute(client, message, args) {
-    //FIRST OF ALL WE WILL ADD ERROR MESSAGE AND PERMISSION MESSSAGE
+
     if (!args.length) {
-      //IF AUTHOR DIDENT GIVE URL OR NAME
+
       return message.channel.send("Беды с поиском : Тип: `play <URL> или название`");
     }
 
     const { channel } = message.member.voice;
     if (!channel) {
-      //IF AUTHOR IS NOT IN VOICE CHANNEL
-      return message.channel.send("Вы должны быть в войс канале :/");
+
+      return message.channel.send("Вы должны быть в голосовом канале");
     }
 
-    //WE WILL ADD PERMS ERROR LATER :(
 
     const targetsong = args.join(" ");
     const videoPattern = /^(https?:\/\/)?(www\.)?(youtube\.com|youtu\.?be)\/.+$/gi;

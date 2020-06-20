@@ -1,12 +1,14 @@
+const Discord = require("discord.js");
+
 module.exports = {
   name: "loop",
-  description: "LOOP THE QUEUE",
+  description: "бесконечное проигрывание всех песен, находящихся в очереди",
   execute (client, message, args) {
     
     const { channel } = message.member.voice;
     if (!channel) {
-      //IF AUTHOR IS NOT IN VOICE CHANNEL
-      return message.channel.send("Вы должны быть в войс канале :/");
+
+      return message.channel.send("Вы должны быть в голосовом канале");
     }
 
     const serverQueue = message.client.queue.get(message.guild.id);
@@ -15,15 +17,13 @@ module.exports = {
       return message.channel.send("Здесь ничего не играет...");
     }
     
-    //OOOOF
+
     serverQueue.loop = !serverQueue.loop
     
-    
-    
-    message.channel.send(`Повтор сейчас **${serverQueue.loop ? "Включен" : "Отключен"}**`)
-    
-    
-    
-    
+    const lewdembed = new Discord.MessageEmbed()
+    .setTitle(`Повтор сейчас - **${serverQueue.loop ? "включен" : "отключен"}**`)
+    .setColor(`FBFF00`)
+
+    message.channel.send(lewdembed);
   }
 }
