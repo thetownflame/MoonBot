@@ -15,7 +15,7 @@ module.exports = {
       .addField(`**Fun commands**`, " ``8ball``, ``cat``, ``cuddle``, ``dice``, ``dog``, ``flip``\n``hug``, ``kiss``, ``pat``, ``poke``, ``slap``, ``tickle``")
       .addField(`**Music commands**`, " ``play``, ``pause``, ``resume``, ``skip``, ``stop``, ``loop``")
       .addField(`**Game commands**`, " ``osu``, ``steam``")
-      .addField(`**Info commands**`, " ``animesearch``, ``avatar``, ``calc``, ``invite``, ``instagram``, ``server``, ``user``, ``weather``, ``stats``")
+      .addField(`**Info commands**`, " ``animesearch``, ``avatar``, ``calc``, ``invite``,``server``, ``user``, ``weather``, ``stats``")
       .addField(`**Moderation commands**`, " ``ban``, ``kick``, ``clear``, ``mute``, ``unmute``")
 
       message.channel.send(embed);
