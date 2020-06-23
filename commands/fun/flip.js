@@ -8,7 +8,7 @@ module.exports = {
   description: "Flips a coin",
   usage: "[command]",
   async execute(client, message, args) {
-  //command
+
   function getRandomInt(min, max) {
     min = Math.ceil(min);
     max = Math.floor(max);
@@ -24,13 +24,13 @@ module.exports = {
 
                 const embed = new Discord.MessageEmbed()
                 .setTitle(`${msg2[1]}`)
-                .setColor("#000000")
+                .setColor("FFFFFF")
               message.channel.send(embed)
           }
           else{
             const embed = new Discord.MessageEmbed()
             .setTitle(`${msg2[2]}`)
-                .setColor("#000000")
+                .setColor("FFFFFF")
           message.channel.send(embed)
 
           }

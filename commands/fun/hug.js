@@ -21,7 +21,6 @@ const superagent = require("snekfetch");
             .setImage(response.body.url)
             .setColor(`RANDOM`)
             .setDescription((message.author.toString() + " обнял " + user.toString()))
-            .setFooter(`это очень мило ^-^`)
             .setURL(response.body.url);
         message.channel.send(lewdembed);
           })

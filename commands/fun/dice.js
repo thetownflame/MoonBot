@@ -4,9 +4,7 @@ const rand = randomnum(1, 6);
 
 module.exports = {
     name: "dice",
-    category: "fun",
-  description: "Allows you to cuddle another user",
-  usage: "[command | user]",
+    
   async execute(client, message, args) {
 
 

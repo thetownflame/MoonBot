@@ -10,14 +10,13 @@ module.exports = {
 description: "Sends a random dog image",
 usage: "[command]",
 async execute(client, message, args) {
-//command
+
 superagent.get('https://nekos.life/api/v2/img/woof')
     .end((err, response) => {
   const lewdembed = new Discord.MessageEmbed()
   .setTitle("Random dog")
   .setImage(response.body.url)
-  .setColor(`#000000`)
-  .setFooter(`это очень мило ^-^`)
+  .setColor(`FFFFCC`)
   .setURL(response.body.url);
 message.channel.send(lewdembed);
 })

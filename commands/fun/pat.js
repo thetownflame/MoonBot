@@ -22,7 +22,6 @@ const utils = require('../../utils');
             .setImage(response.body.url)
             .setColor(`RANDOM`)
             .setDescription((message.author.toString() + " погладил " + user.toString()))
-            .setFooter(`это очень мило оWo`)
             .setURL(response.body.url);
         message.channel.send(lewdembed);
           })

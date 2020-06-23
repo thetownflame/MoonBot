@@ -11,9 +11,9 @@ module.exports = {
 
         const img = await randomPuppy(random);
         const embed = new MessageEmbed()
-            .setColor("RANDOM")
+            .setColor("FFFFCC")
             .setImage(img)
-            .setTitle(`From /r/${random}`)
+            .setTitle(`Из /r/${random}`)
             .setURL(`https://reddit.com/r/${random}`);
 
         message.channel.send(embed);

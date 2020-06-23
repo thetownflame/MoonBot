@@ -6,7 +6,7 @@ module.exports = {
   description: "Allows you to tickle a user",
   usage: "[command | user]",
   async execute(client, message, args) {
-  //command
+
         const role = message.mentions.roles.first() || message.guild.roles.cache.get(args[0]);
 
         if (!role) {

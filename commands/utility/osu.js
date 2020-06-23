@@ -11,16 +11,15 @@ module.exports = {
 description: "Get information about a user",
 usage: "[command | user] or [command]",
 async execute(client, message, args) {
-//command
+
+  
 
 {
 
-  
   let username = args[0]
   if (!args[0]) return message.channel.send('Please, provide a valid user\'s nickname! (osu!)')
 
 
-  
 api.getUser({u: username})
   .then((user) => {
 

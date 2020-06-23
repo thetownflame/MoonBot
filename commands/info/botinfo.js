@@ -15,7 +15,7 @@ module.exports = {
   description: "Sends detailed info about the client",
   usage: "[command]",
   async execute(client, message, args) {
-  //command
+    
   let cpuLol;
   cpuStat.usagePercent(function(err, percent, seconds) {
       if (err) {

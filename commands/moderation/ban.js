@@ -65,26 +65,30 @@ module.exports = {
             .setAuthor(`Данная верификация действует 30с`)
             .setDescription(`Вы точно хотите забанить ${toBan}?`)
 
-        // Send the message
         await message.channel.send(promptEmbed).then(async msg => {
-            // Await the reactions and the reactioncollector
+
             const emoji = await promptMessage(msg, message.author, 30, ["✅", "❌"]);
 
-            // Verification stuffs
+
             if (emoji === "✅") {
-                msg.delete();
+                const embed = new Discord.MessageEmbed()
+                .setColor("#ff0000")
+                .setThumbnail(toBan.user.displayAvatarURL)
+                .setDescription(stripIndents`<a:pin:725097161112682567> **Пользователь заблокирован:** ${toBan} (${toBan.id})
+                **Модератор:** ${message.member} (${message.member.id})
+                **Причина:** ${args.slice(1).join(" ")}`);
+    
+                msg.channel.send(embed);
 
                 toBan.ban(args.slice(1).join(" "))
                     .catch(err => {
                         if (err) return message.channel.send(`Хээй...плохие новости, что-то сломалось, вот ошибка: ${err}`)
                     });
 
-                logChannel.send(embed);
             } else if (emoji === "❌") {
                 msg.delete();
 
-                message.reply(`бан отменён`)
-                    .then(m => m.delete(10000));
+
             }
         });
     }

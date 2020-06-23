@@ -9,7 +9,7 @@ const utils = require('../../utils');
               description: "Allows you to tickle a user",
               usage: "[command | user]",
               async execute(client, message, args) {
-              //command
+
               const user = message.mentions.users.first();
               if(!user)
                   return message.reply('Упомяните кого-нибудь чтобы пощекотать');
@@ -17,11 +17,10 @@ const utils = require('../../utils');
               superagent.get('https://nekos.life/api/v2/img/tickle')
                   .end((err, response) => {
                 const lewdembed = new Discord.MessageEmbed()
-                (message.author.username + " щекочет " + user.username)
+                .setTitle(message.author.username + " щекочет " + user.username)
                 .setImage(response.body.url)
                 .setColor(`RANDOM`)
                 .setDescription((message.author.toString() + " щекочет " + user.toString()))
-                .setFooter(`страшно...`)
                 .setURL(response.body.url);
             message.channel.send(lewdembed);
               })

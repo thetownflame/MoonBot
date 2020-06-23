@@ -9,7 +9,7 @@ const utils = require('../../utils');
           description: "Allows you to slap a user",
           usage: "[command | user]",
           async execute(client, message, args) {
-          //command
+
           const user = message.mentions.users.first();
           if(!user)
               return message.reply('Упомяните кого-нибудь чтобы ударить!');
@@ -21,7 +21,6 @@ const utils = require('../../utils');
             .setImage(response.body.url)
             .setColor(`RANDOM`)
             .setDescription((message.author.toString() + " со всей силы ударил " + user.toString()))
-            .setFooter(`умер пацанчик...`)
             .setURL(response.body.url);
         message.channel.send(lewdembed);
           })

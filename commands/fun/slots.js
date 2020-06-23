@@ -2,9 +2,6 @@ const Discord = require("discord.js");
 
 module.exports = {
 	name: "slots",
-	category: "fun",
-  description: "Allows you to kiss another user",
-  usage: "[command | user]",
   async execute(client, message, args) {
 
  var replys1 = [
@@ -67,7 +64,7 @@ module.exports = {
 
 		const embed = new Discord.MessageEmbed()
 	        .setColor("#FE0101")
-	        .setDescription(`**[ :slot_machine: ${message.author} launched the slot machine! :slot_machine: ]**`)
+	        .setDescription(`**[ :slot_machine: ${message.author} запустил казино :slot_machine: ]**`)
 	        .addField("**-------------------**", "** **")
 	        .addField(`${reponse} \n \n${reponse2}**<** \n \n${reponse3}`, `** **`)
 	        .addField("**-------------------**", "** **")

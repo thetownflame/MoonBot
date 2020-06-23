@@ -68,25 +68,30 @@ module.exports = {
             .setAuthor(`Данная верификация действует 30с`)
             .setDescription(`Вы точно хотите кикнуть ${toKick}?`)
 
-        // Send the message
+
         await message.channel.send(promptEmbed).then(async msg => {
             const emoji = await promptMessage(msg, message.author, 30, ["✅", "❌"]);
 
-            // The verification stuffs
+    
             if (emoji === "✅") {
-                msg.delete();
+                const embed = new Discord.MessageEmbed()
+                .setColor("#ff0000")
+                .setThumbnail(toKick.user.displayAvatarURL)
+                .setDescription(stripIndents`<a:pin:725097161112682567> **Пользователь выгнан:** ${toKick} (${toKick.id})
+                **Модератор:** ${message.member} (${message.member.id})
+                **Причина:** ${args.slice(1).join(" ")}`);
+    
+                msg.channel.send(embed);
 
                 toKick.kick(args.slice(1).join(" "))
                     .catch(err => {
                         if (err) return message.channel.send(`Хээй...плохие новости, что-то сломалось, пожалуйста, попробуйте чуть позже`)
                     });
 
-                logChannel.send(embed);
             } else if (emoji === "❌") {
                 msg.delete();
 
-                message.reply(`Кик отменён`)
-                    .then(m => m.delete(10000));
+                
             }
         });
     }
