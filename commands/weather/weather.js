@@ -31,7 +31,7 @@ let embed = new discord.MessageEmbed()
 .setThumbnail(result[0].current.imageUrl);
    message.channel.send(embed)
 } catch(err) {
-  return message.channel.send("Unable To Get the data of Given location")
+  return message.channel.send("Не удаётся получить данные погоды этой локации")
 }
 });   
 

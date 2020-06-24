@@ -5,14 +5,10 @@ const stripIndents = require('common-tags').stripIndents;
 
 module.exports = {
     name: "calc",
-    category: "utility",
-  description: "Calculates a math equation",
-  usage: "[command | input]",
   async execute(client, message, args) {
-  //command
   
   if(args.length < 1)
-  return message.reply(`You must provide a equation to be solved on the calculator`);
+  return message.reply(`Вы должны предоставить аргументы для решения на калькуляторе :)`);
 
 const question = args.join(' ');
 
@@ -23,7 +19,7 @@ if(question.indexOf('9 + 10') > -1) {
   try {
       answer = math.eval(question);
   } catch (err) {
-      message.channel.send(`Invalid math equation`);
+      message.channel.send(`Неверные мат. аргументы`);
   }
 }
 

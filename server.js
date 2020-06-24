@@ -5,12 +5,17 @@ const { join } = require("path");
 const { TOKEN, PREFIX } = require("./config.json")
 const moment = require("moment");
 
+let apiKey = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjcxOTY2NDUwNDIwMzY0MDk3NSIsImlhdCI6MTU5MzAyNDczOX0.2d7QhcQbhuWkzNFFokZY9tC73AWuulR8ZVv_3reAOmU  ";
+const SDC = require("@megavasiliy007/sdc-api");
+const clientSDC = new SDC(apiKey);
+
 const client = new Client({
   disableEveryone: true
 })
 
 client.on('ready', () => {
 
+  clientSDC.setAutoPost(client);
     process.setMaxListeners(0);
       process.setMaxListeners(0);
       client.user.setActivity(`m.help | ${client.guilds.cache.size} servers `, {

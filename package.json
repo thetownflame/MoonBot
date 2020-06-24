@@ -4,6 +4,8 @@
   "description": "simple discord bot",
   "main": "server.js",
   "dependencies": {
+    "@megavasiliy007/sdc-api": "github:MegaVasiliy007/sdc-api",
+    "alexflipnote.js": "^1.1.2",
     "ascii-table": "^0.0.9",
     "common-tags": "^1.8.0",
     "cpu-stat": "^2.0.1",
