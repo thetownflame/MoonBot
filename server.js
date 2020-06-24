@@ -1,8 +1,9 @@
-const discord = require("discord.js")
+const Discord = require("discord.js")
 const { Client, Collection } = require("discord.js");
 const { readdirSync } = require("fs");
 const { join } = require("path");
 const { TOKEN, PREFIX } = require("./config.json")
+const moment = require("moment");
 
 const client = new Client({
   disableEveryone: true
@@ -22,23 +23,22 @@ client.on('ready', () => {
 client.on("warn", info => console.log(info));
 client.on("error", console.error)
 
-client.commands = new discord.Collection()
+client.commands = new Discord.Collection()
 client.aliases = new Collection();
-client.prefix = PREFIX
 client.queue = new Map();
 
 //// приветствие человека
 client.on('guildMemberAdd', member => {
-  const channel = member.guild.channels.cache.find(ch => ch.name === `‖🚕прибывшие`);
+  const channel = member.guild.channels.cache.find(ch => ch.name === `┃✨прибывшие`);
   if (!channel) return;
-
-  var embed = new discord.MessageEmbed()
+  var embed = new Discord.MessageEmbed()
 .setColor("FF9999")
 .setDescription(`${member} присоединился к семейке сервера '**Городок Жизни**' `)
 .setImage("https://media.discordapp.net/attachments/698514137852018688/715867160534057041/-1.png?width=855&height=481")
+.setFooter('Puella - все права анимированы', 'https://fast-anime.ru/shop/upload/198594.jpg');
 
     channel.send(embed);
-    var embed = new discord.MessageEmbed()
+    var embed = new Discord.MessageEmbed()
 
   .setColor("FF9999")
   .setDescription(`** Хей! Приветствую тебя на сервере "Городок жизни"! 🎇
@@ -66,6 +66,38 @@ for (const file of cmdFiles) {
 } 
 
 
+client.on("guildCreate", guild => {
+  let embed = new Discord.MessageEmbed()
+    .setTitle(`<a:sayorijump:723500622141325313> Бот был добавлен на новый сервер`)
+    .setColor("33FFFF")
+    .addField("Название сервера", guild.name, true)
+    .addField("ID сервера", `\`${guild.id}\``, true)
+    .addField("Владелец сервера", `\`${guild.owner.user.tag}\``, true)
+    .addField("Участников", guild.memberCount, true)
+    .addField("Ролей", guild.roles.cache.size, true)
+    .addField("Каналов", guild.channels.cache.size, true)
+    .addField("Сервер создан", moment(guild.createdAt).fromNow(), true)
+    .addField("Серверов бота", client.guilds.cache.size, true);
+  client.channels.cache.get("704431613530079323").send(embed);
+
+});
+
+client.on("guildDelete", guild => {
+  let embed = new Discord.MessageEmbed()
+    .setTitle(`<:suicidekanna:723501102749712384> Бот покинул сервер`)
+    .setColor("FF0033")
+    .addField("Название сервера", guild.name, true)
+    .addField("ID сервера", `\`${guild.id}\``, true)
+    .addField("Владелец сервера", `\`${guild.owner.user.tag}\``, true)
+    .addField("Участников", guild.memberCount, true)
+    .addField("Ролей", guild.roles.cache.size, true)
+    .addField("Каналов", guild.channels.cache.size, true)
+    .addField("Сервер создан", moment(guild.createdAt).fromNow(), true)
+    .addField("Серверов бота", client.guilds.cache.size, true);
+  client.channels.cache.get("704431613530079323").send(embed);
+
+});
+
 client.on("message", message => {
    if (message.author.bot) return;
   if (!message.guild) return;
@@ -74,7 +106,9 @@ client.on("message", message => {
     
     const args = message.content.slice(PREFIX.length).trim().split(/ +/) 
     const command = args.shift().toLowerCase();
-    
+    if (!command) command = client.commands.get(client.aliases.get(cmd));
+
+
     if(!client.commands.has(command)) {
       return;
     } 
@@ -90,6 +124,7 @@ client.on("message", message => {
   
   
 });
+ 
 
 
 client.login(TOKEN)
