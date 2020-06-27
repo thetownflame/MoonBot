@@ -30,15 +30,15 @@ module.exports = {
         .setThumbnail(message.guild.iconURL())
         .addField('Статистика', [
  
-            `<a:kannaoof:723501765114462228> Префикс: ${PREFIX}`,
-            `<a:tailwag:723503331984670771> Юзеры: ${client.users.cache.size}`,
-            `<a:partycat:723503338263412757> Сервера бота: ${client.guilds.cache.size}`,
-            `<:89894960_jsdiscordbotlogonodejsa:724748652249088210> Версия Node.JS: ${process.version}`,
-            `<a:dog_hammer:723500976354623528> Платформа: ${process.platform}`,
-            `<:seks:715834287504752640>  Процессор: ${core.model}`,
-            `<:cutecat:717766053807128646> ОЗУ: ${(process.memoryUsage().heapUsed / 1024 / 1024).toFixed(2)} | ${(os.totalmem() / 1024 / 1024).toFixed(2)} MB`,
-            `<a:pikachuchair:723502086603407461> Uptime: ${ms(os.uptime() *1000, { long:true})}`,
-            `<:4228_discord_bot_dev:724748499593461912> Разработчик: ricochan#9999`,
+            `<:QuestionsWut:726481237765521438> Префикс: ${PREFIX}`,
+            `<:kei:726481258489839676> Юзеры: ${client.users.cache.size}`,
+            `<a:good:725448779087609937> Сервера бота: ${client.guilds.cache.size}`,
+            `<:jsdiscordbotlogonodejsa:726481244652699782> Версия Node.JS: ${process.version}`,
+            `<:Emilia_What:726481252734992426> Платформа: ${process.platform}`,
+            `<:ChikaSmug:726481245885956158> Процессор: ${core.model}`,
+            `<:KaguyaBlush:726481252957290506> ОЗУ: ${(process.memoryUsage().heapUsed / 1024 / 1024).toFixed(2)} | ${(os.totalmem() / 1024 / 1024).toFixed(2)} MB`,
+            `<a:pikachuchair:723502086603407461> Uptime: ${ms(os.uptime() *1000, { long:false})}`,
+            `<:discord_bot_dev:726481238264643645> Разработчик: ricochan#9999`,
 
             '\u200b'
 
