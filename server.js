@@ -73,33 +73,33 @@ for (const file of cmdFiles) {
 
 client.on("guildCreate", guild => {
   let embed = new Discord.MessageEmbed()
-    .setTitle(`<a:sayorijump:723500622141325313> Бот был добавлен на новый сервер`)
+        .setTitle(`<a:sayorijump:723500622141325313> Бот был добавлен на новый сервер`)
     .setColor("33FFFF")
     .addField("Название сервера", guild.name, true)
     .addField("ID сервера", `\`${guild.id}\``, true)
     .addField("Владелец сервера", `\`${guild.owner.user.tag}\``, true)
-    .addField("Участников", guild.memberCount, true)
-    .addField("Ролей", guild.roles.cache.size, true)
-    .addField("Каналов", guild.channels.cache.size, true)
-    .addField("Сервер создан", moment(guild.createdAt).fromNow(), true)
-    .addField("Серверов бота", client.guilds.cache.size, true);
-  client.channels.cache.get("704431613530079323").send(embed);
+    .addField("Количество участников", guild.memberCount, true)
+    .addField("Количество ролей", guild.roles.cache.size, true)
+    .addField("Количество каналов", guild.channels.cache.size, true)
+    .addField("Дата создания сервера", moment(guild.createdAt).fromNow(), true)
+    .addField("Сервера, на которых находится бот", client.guilds.cache.size, true);
+  client.channels.cache.get("726493795063038002").send(embed);
 
 });
 
 client.on("guildDelete", guild => {
   let embed = new Discord.MessageEmbed()
-    .setTitle(`<:suicidekanna:723501102749712384> Бот покинул сервер`)
-    .setColor("FF0033")
-    .addField("Название сервера", guild.name, true)
-    .addField("ID сервера", `\`${guild.id}\``, true)
-    .addField("Владелец сервера", `\`${guild.owner.user.tag}\``, true)
-    .addField("Участников", guild.memberCount, true)
-    .addField("Ролей", guild.roles.cache.size, true)
-    .addField("Каналов", guild.channels.cache.size, true)
-    .addField("Сервер создан", moment(guild.createdAt).fromNow(), true)
-    .addField("Серверов бота", client.guilds.cache.size, true);
-  client.channels.cache.get("704431613530079323").send(embed);
+      .setTitle(`<:ChikaSmug:726481245885956158> Бот покинул сервер`)
+  .setColor("33FFFF")
+  .addField("Название сервера", guild.name, true)
+  .addField("ID сервера", `\`${guild.id}\``, true)
+  .addField("Владелец сервера", `\`${guild.owner.user.tag}\``, true)
+  .addField("Количество участников", guild.memberCount, true)
+  .addField("Количество ролей", guild.roles.cache.size, true)
+  .addField("Количество каналов", guild.channels.cache.size, true)
+  .addField("Дата создания сервера", moment(guild.createdAt).fromNow(), true)
+  .addField("Сервера, на которых находится бот", client.guilds.cache.size, true);
+  client.channels.cache.get("726493795063038002").send(embed);
 
 });
 
