@@ -21,8 +21,10 @@ client.on('ready', () => {
       client.user.setActivity(`m.help || ${client.guilds.cache.size} servers `, {
       type: "STREAMING",
       url: "https://www.twitch.tv/thetownflame"
+
   })
 });
+
 
 
 client.on("warn", info => console.log(info));
@@ -83,10 +85,10 @@ client.on("guildCreate", guild => {
     .addField("Каналов", guild.channels.cache.size, true)
     .addField("Сервер создан", moment(guild.createdAt).fromNow(), true)
     .addField("Серверов бота", client.guilds.cache.size, true);
-  client.channels.cache.get("704431613530079323").send(embed);
+    client.channels.cache.get("727585610403020820").setName(`🍒Серверов бота: ${client.guilds.cache.size}`);
+  client.channels.cache.get("726493795063038002").send(embed);
 
 });
-
 
 client.on("guildDelete", guild => {
   let embed = new Discord.MessageEmbed()
@@ -100,7 +102,8 @@ client.on("guildDelete", guild => {
     .addField("Каналов", guild.channels.cache.size, true)
     .addField("Сервер создан", moment(guild.createdAt).fromNow(), true)
     .addField("Серверов бота", client.guilds.cache.size, true);
-  client.channels.cache.get("704431613530079323").send(embed);
+    client.channels.cache.get("727585610403020820").setName(`🍒Серверов бота: ${client.guilds.cache.size}`);
+  client.channels.cache.get("726493795063038002").send(embed);
 
 });
 
@@ -136,9 +139,10 @@ client.on("message", message => {
   if(message.content.startsWith(`<@!719664504203640975>`)) {
     const embed = new Discord.MessageEmbed()
     .setTitle(`Информация обо мне <:smug:725447218319982682>`)
-    .setDescription(`  <a:4745_thisr:727466409487237180>**Префикс бота:** ${PREFIX}`)
-    .addField(`  <a:4745_thisr:727466409487237180>**Основные команды бота для ознакомления**`, " ``m.help`` ``m.invite``")
-    .setImage(`https://cdn.discordapp.com/attachments/698514137852018688/727459891693748224/ligne-gif-105.gif`)
+    .setDescription(`**Глобальный префикс бота:** ${PREFIX}`)
+    .addField(`**Основные команды бота для ознакомления:**`, " ``m.help`` | ``m.stats")
+    .addField(`**Полезные ссылки:**`, " [Сервер поддержки](https://discord.gg/93wFswg) | [Добавить бота](https://discord.com/oauth2/authorize?client_id=719664504203640975&scope=bot&permissions=2054351998) | [Мониторинг](https://bots.server-discord.com/719664504203640975)")
+    .setImage(`https://media.discordapp.net/attachments/702081112792498256/715871097907839007/advertise_light_bar.gif`)
     .setColor(`FFFFCC`)
     
     message.channel.send(embed);
