@@ -140,7 +140,7 @@ client.on("message", message => {
     const embed = new Discord.MessageEmbed()
     .setTitle(`Информация обо мне <:smug:725447218319982682>`)
     .setDescription(`**Глобальный префикс бота:** ${PREFIX}`)
-    .addField(`**Основные команды бота для ознакомления:**`, " ``m.help`` | ``m.stats")
+    .addField(`**Основные команды бота для ознакомления:**`, " ``m.help`` | ``m.stats``")
     .addField(`**Полезные ссылки:**`, " [Сервер поддержки](https://discord.gg/93wFswg) | [Добавить бота](https://discord.com/oauth2/authorize?client_id=719664504203640975&scope=bot&permissions=2054351998) | [Мониторинг](https://bots.server-discord.com/719664504203640975)")
     .setImage(`https://media.discordapp.net/attachments/702081112792498256/715871097907839007/advertise_light_bar.gif`)
     .setColor(`FFFFCC`)
