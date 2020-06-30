@@ -18,7 +18,7 @@ client.on('ready', () => {
   clientSDC.setAutoPost(client);
     process.setMaxListeners(0);
       process.setMaxListeners(0);
-      client.user.setActivity(`m.help | ${client.guilds.cache.size} servers `, {
+      client.user.setActivity(`m.help || ${client.guilds.cache.size} servers `, {
       type: "STREAMING",
       url: "https://www.twitch.tv/thetownflame"
   })
@@ -73,33 +73,34 @@ for (const file of cmdFiles) {
 
 client.on("guildCreate", guild => {
   let embed = new Discord.MessageEmbed()
-        .setTitle(`<a:sayorijump:723500622141325313> Бот был добавлен на новый сервер`)
+    .setTitle(`<a:sayorijump:723500622141325313> Бот был добавлен на новый сервер`)
     .setColor("33FFFF")
     .addField("Название сервера", guild.name, true)
     .addField("ID сервера", `\`${guild.id}\``, true)
     .addField("Владелец сервера", `\`${guild.owner.user.tag}\``, true)
-    .addField("Количество участников", guild.memberCount, true)
-    .addField("Количество ролей", guild.roles.cache.size, true)
-    .addField("Количество каналов", guild.channels.cache.size, true)
-    .addField("Дата создания сервера", moment(guild.createdAt).fromNow(), true)
-    .addField("Сервера, на которых находится бот", client.guilds.cache.size, true);
-  client.channels.cache.get("726493795063038002").send(embed);
+    .addField("Участников", guild.memberCount, true)
+    .addField("Ролей", guild.roles.cache.size, true)
+    .addField("Каналов", guild.channels.cache.size, true)
+    .addField("Сервер создан", moment(guild.createdAt).fromNow(), true)
+    .addField("Серверов бота", client.guilds.cache.size, true);
+  client.channels.cache.get("704431613530079323").send(embed);
 
 });
 
+
 client.on("guildDelete", guild => {
   let embed = new Discord.MessageEmbed()
-      .setTitle(`<:ChikaSmug:726481245885956158> Бот покинул сервер`)
-  .setColor("33FFFF")
-  .addField("Название сервера", guild.name, true)
-  .addField("ID сервера", `\`${guild.id}\``, true)
-  .addField("Владелец сервера", `\`${guild.owner.user.tag}\``, true)
-  .addField("Количество участников", guild.memberCount, true)
-  .addField("Количество ролей", guild.roles.cache.size, true)
-  .addField("Количество каналов", guild.channels.cache.size, true)
-  .addField("Дата создания сервера", moment(guild.createdAt).fromNow(), true)
-  .addField("Сервера, на которых находится бот", client.guilds.cache.size, true);
-  client.channels.cache.get("726493795063038002").send(embed);
+    .setTitle(`<:suicidekanna:723501102749712384> Бот покинул сервер`)
+    .setColor("FF0066")
+    .addField("Название сервера", guild.name, true)
+    .addField("ID сервера", `\`${guild.id}\``, true)
+    .addField("Владелец сервера", `\`${guild.owner.user.tag}\``, true)
+    .addField("Участников", guild.memberCount, true)
+    .addField("Ролей", guild.roles.cache.size, true)
+    .addField("Каналов", guild.channels.cache.size, true)
+    .addField("Сервер создан", moment(guild.createdAt).fromNow(), true)
+    .addField("Серверов бота", client.guilds.cache.size, true);
+  client.channels.cache.get("704431613530079323").send(embed);
 
 });
 
@@ -124,12 +125,24 @@ client.on("message", message => {
       console.log(err)
       message.reply("I am getting error on using this command")
     }
-    
   }
-  
-  
 });
  
 
+client.on("message", message => {
+  if (message.author.bot) return;
+  if (!message.guild) return;
+  
+  if(message.content.startsWith(`<@!719664504203640975>`)) {
+    const embed = new Discord.MessageEmbed()
+    .setTitle(`Информация обо мне <:smug:725447218319982682>`)
+    .setDescription(`  <a:4745_thisr:727466409487237180>**Префикс бота:** ${PREFIX}`)
+    .addField(`  <a:4745_thisr:727466409487237180>**Основные команды бота для ознакомления**`, " ``m.help`` ``m.invite``")
+    .setImage(`https://cdn.discordapp.com/attachments/698514137852018688/727459891693748224/ligne-gif-105.gif`)
+    .setColor(`FFFFCC`)
+    
+    message.channel.send(embed);
+  }
+})
 
 client.login(TOKEN)
