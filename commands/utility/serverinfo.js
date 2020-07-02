@@ -33,7 +33,7 @@ let serverembed = new Discord.MessageEmbed()
   .addField(`<:hmmm:725448780144443542> Дата создания`, message.guild.createdAt)
   .addField(`<a:good:725448779087609937> Тайм-аут AFK`, message.guild.afkTimeout / 60 + ' minutes', true)
   .addField(`<a:pin:725447218982551603> Эмоджи`, `${emojis}/100`, true)
-  .addField(`<a:satanilaugh:723503324984246315> Дата вступления`, message.member.joinedAt)
+  .addField(`<:IPsurprised:726481252651106437> Дата вступления`, message.member.joinedAt)
 
 .setThumbnail(message.guild.iconURL())
 .setTimestamp()
