@@ -1,5 +1,5 @@
-//I WILL BE BACK AFTER 5 min
 const ytdlDiscord = require("ytdl-core-discord");
+const Discord = require("discord.js")
 
 module.exports = {
   async play(song, message) {
@@ -8,7 +8,12 @@ module.exports = {
     if(!song) {
       queue.channel.leave();
       message.client.queue.delete(message.guild.id)
-      return queue.textChannel.send("Music Queue is Ended Now 😌").catch(console.error)
+
+      const musend = new Discord.MessageEmbed()
+      .setDescription(`**Проигрывание музыки завершено**`)
+      .setColor(`FFFFCC`)
+      
+      return queue.textChannel.send(musend).catch(console.error)
     }
     
     try {
@@ -22,11 +27,6 @@ module.exports = {
         module.exports.play(queue.songs[0], message)
       }
       
-      if(error.message.includes === "copyright") {
-        return message.channel.send("THIS VIDEO CONTAINS COPYRIGHT CONTENT")
-      } else {
-        console.error(error)
-      }
     }
     
     const dispatcher = queue.connection
@@ -40,11 +40,16 @@ module.exports = {
         module.exports.play(queue.songs[0], message)
       }
     }).on("error", console.error)
-    dispatcher.setVolumeLogarithmic(queue.volume / 100); //VOLUME
+    dispatcher.setVolumeLogarithmic(queue.volume / 100); 
+    
+    const music = new Discord.MessageEmbed()
+    .setDescription(`**Начинаю проигрывать** - [${song.title}](${song.url})`)
+    .setImage(`https://cdn.discordapp.com/attachments/704246613249359882/728693423682355241/Annonces.gif`)
+    .setFooter('Музыкальная часть бота использует поиск по YouTube', 'https://cdn.jim-nielsen.com/macos/512/music-2019-09-25.png')
+    .setColor(`FFFFCC`)
     
     
-    
-      queue.textChannel.send(`**STARTED PLAYING** - [${song.title}](${song.url})`)
+      queue.textChannel.send(music)
     
     
   }
