@@ -18,7 +18,7 @@ client.on('ready', () => {
   clientSDC.setAutoPost(client);
     process.setMaxListeners(0);
       process.setMaxListeners(0);
-      client.user.setActivity(`m.help || ${client.guilds.cache.size} servers `, {
+      client.user.setActivity(`m.help || ${client.guilds.cache.size} серверов `, {
       type: "STREAMING",
       url: "https://www.twitch.tv/thetownflame"
 
@@ -34,15 +34,15 @@ client.commands = new Discord.Collection()
 client.aliases = new Collection();
 client.queue = new Map();
 
-//// приветствие человека
+
 client.on('guildMemberAdd', member => {
-  const channel = member.guild.channels.cache.find(ch => ch.name === `┃✨прибывшие`);
+  const channel = member.guild.channels.cache.find(ch => ch.name === `‖🚕прибывшие`);
   if (!channel) return;
   var embed = new Discord.MessageEmbed()
+
 .setColor("FF9999")
 .setDescription(`${member} присоединился к семейке сервера '**Городок Жизни**' `)
 .setImage("https://media.discordapp.net/attachments/698514137852018688/715867160534057041/-1.png?width=855&height=481")
-.setFooter('Puella - все права анимированы', 'https://fast-anime.ru/shop/upload/198594.jpg');
 
     channel.send(embed);
     var embed = new Discord.MessageEmbed()
@@ -126,7 +126,7 @@ client.on("message", message => {
       client.commands.get(command).execute(client, message, args)
     } catch (err) { 
       console.log(err)
-      message.reply("I am getting error on using this command")
+      message.reply("Возникли неполадки с выполнением данной команды")
     }
   }
 });
@@ -140,7 +140,7 @@ client.on("message", message => {
     const embed = new Discord.MessageEmbed()
     .setTitle(`Информация обо мне <:smug:725447218319982682>`)
     .setDescription(`**Глобальный префикс бота:** ${PREFIX}`)
-    .addField(`**Основные команды бота для ознакомления:**`, " ``m.help`` | ``m.stats``")
+    .addField(`**Основные команды бота для ознакомления:**`, " ``m.help`` | ``m.stats")
     .addField(`**Полезные ссылки:**`, " [Сервер поддержки](https://discord.gg/93wFswg) | [Добавить бота](https://discord.com/oauth2/authorize?client_id=719664504203640975&scope=bot&permissions=2054351998) | [Мониторинг](https://bots.server-discord.com/719664504203640975)")
     .setImage(`https://media.discordapp.net/attachments/702081112792498256/715871097907839007/advertise_light_bar.gif`)
     .setColor(`FFFFCC`)

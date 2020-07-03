@@ -16,9 +16,9 @@ module.exports = {
       const core = os.cpus()[0];
       const embedStats = new MessageEmbed()
 
-        .setAuthor('Moon Bot |  Статистика', 'https://conceptdraw.com/a1701c3/p6/preview/640/pict--mac-computer-computers-vector-stencils-library', 'https://discord.com/oauth2/authorize?client_id=719664504203640975&scope=bot&permissions=2054351998')
+        .setAuthor('Moonlight |  Статистика', 'https://cdn2.iconfinder.com/data/icons/mobile-device/512/bank-data-storage-info-blue-round-512.png', 'https://discord.com/oauth2/authorize?client_id=719664504203640975&scope=bot&permissions=2054351998')
         .setColor("FFFAFA")     
-        .setThumbnail(message.guild.iconURL())
+        .setThumbnail('https://i.imgur.com/bZpAz25.gif')
         .addField('Статистика', [
  
             `<:QuestionsWut:726481237765521438> Префикс: **${PREFIX}**`,

@@ -74,7 +74,7 @@ module.exports = {
                 const embed = new Discord.MessageEmbed()
                 .setColor("#ff0000")
                 .setThumbnail(toBan.user.displayAvatarURL)
-                .setDescription(stripIndents`<a:pin:725097161112682567> **Пользователь заблокирован:** ${toBan} (${toBan.id})
+                .setDescription(stripIndents`<a:pin:725447218982551603> **Пользователь заблокирован:** ${toBan} (${toBan.id})
                 **Модератор:** ${message.member} (${message.member.id})
                 **Причина:** ${args.slice(1).join(" ")}`);
     
