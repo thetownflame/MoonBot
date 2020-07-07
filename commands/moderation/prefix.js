@@ -67,7 +67,7 @@ async execute(client, message, args) {
     db.set(`prefix_${message.guild.id}`, args[0])
 
     const embedyes = new Discord.MessageEmbed()
-    .setAuthor('Префикс успешно установлен', 'https://cdn1.iconfinder.com/data/icons/rounded-set-5/48/symbol-forbidden-512.png')
+    .setAuthor('Префикс успешно установлен', 'https://cdn1.iconfinder.com/data/icons/color-bold-style/21/34-512.png')
     .setDescription("Новый префикс на сервере " + message.guild.name + ` - ${args[0]}`)
     .setColor(`FFFFCC`)
 

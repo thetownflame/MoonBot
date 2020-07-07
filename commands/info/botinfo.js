@@ -7,12 +7,16 @@ let os = require('os')
 let cpuStat = require("cpu-stat")
 const ms = require("ms")
 const { PREFIX } = require('../../config.json');
-
+const db = require("quick.db")
 
 module.exports = {
     name: "stats",
   async execute(client, message, args) {
     
+
+  let prefix = db.get(`prefix_${message.guild.id}`)
+  if(prefix === null) prefix = PREFIX;
+
   let cpuLol;
   cpuStat.usagePercent(function(err, percent, seconds) {
       if (err) {
@@ -27,7 +31,7 @@ module.exports = {
         .setThumbnail(message.guild.iconURL())
         .addField('Статистика', [
  
-            `<a:kannaoof:723501765114462228> Префикс: ${PREFIX}`,
+            `<a:kannaoof:723501765114462228> Префикс: ${prefix}`,
             `<a:tailwag:723503331984670771> Юзеры: ${client.users.cache.size}`,
             `<a:partycat:723503338263412757> Сервера бота: ${client.guilds.cache.size}`,
             `<:89894960_jsdiscordbotlogonodejsa:724748652249088210> Версия Node.JS: ${process.version}`,
