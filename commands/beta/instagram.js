@@ -1,5 +1,6 @@
 const { MessageEmbed } = require("discord.js");
 const { stripIndents } = require("common-tags");
+
 const fetch = require("node-fetch");
 
 module.exports = {
@@ -20,12 +21,13 @@ async execute(client, message, args) {
             res = await fetch(url).then(url => url.json());
         } catch (e) {
             
-            const embede = new MessageEmbed()
-            .setAuthor('Возникла ошибка!', 'https://cdn2.iconfinder.com/data/icons/mix-color-5/100/Mix_color_5__info-512.png')
+            const embede = new Discord.MessageEmbed()
+            .setAuthor('Возникла ошибка!', 'https://cdn1.iconfinder.com/data/icons/rounded-set-5/48/symbol-forbidden-512.png')
             .setDescription(`Попробуйте ввести никнейм аккаунта без "@" или же перепроверьте правильность написания`)
             .setColor(`FFFFCC`)
 
             return message.channel.send(embede)
+
         }
 
         const account = res.graphql.user;

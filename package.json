@@ -26,6 +26,7 @@
     "node-osu": "^2.2.0",
     "opusscript": "^0.0.7",
     "path": "^0.12.7",
+    "quick.db": "^7.1.1",
     "random-puppy": "^1.1.0",
     "request": "^2.88.2",
     "simple-youtube-api": "^5.2.1",
